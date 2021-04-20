@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    android {
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    defaultConfig {
+        applicationId "com.example.aleftest"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation kotlinDep
+    implementation coreDep
+    implementation fragmentDep
+    implementation constraintDep
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    testImplementation jUnitDep
+
+    implementation navigationFragmentDep
+    implementation navigationUiDep
+
+    implementation recyclerViewDep
+    implementation materialDep
+
+    implementation retrofitDep
+    implementation gsonConvertedDep
+    implementation gsonDep
+    implementation interceptorVersionDep
+
+    implementation daggerDep
+    kapt daggerKapt
+
+    implementation glideDep
+    kapt glideKapt
+    implementation glideOkHttpDep
+    implementation('com.github.bumptech.glide:okhttp3-integration:4.12.0') {
+        exclude group: 'glide-parent'
+    }
+
+}

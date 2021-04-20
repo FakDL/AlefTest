@@ -1,0 +1,86 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        kotlin_version = '1.4.31'
+
+        versionName = '1.0.0'
+        versionCode = 1
+
+        fragmentVersion = '1.3.2'
+        coreVersion = '1.3.2'
+        supportVersion = '1.2.0'
+        cardViewVersion = '1.0.0'
+        constraintVersion = '2.0.4'
+
+        daggerVersion = '2.33'
+
+        architectureComponentVersion = '2.3.0'
+
+        navControllerVersion = '2.3.3'
+
+        glideVersion = '4.12.0'
+
+        junitVersion = '4.13.2'
+        mockitoVersion = '2.23.0'
+
+        retrofitVersion = '2.9.0'
+        okhttpVersion = '5.0.0-alpha.2'
+        gsonVersion = '2.8.6'
+
+        kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+        fragmentDep = "androidx.fragment:fragment-ktx:$fragmentVersion"
+        coreDep = "androidx.core:core-ktx:$coreVersion"
+        androidDep = "androidx.appcompat:appcompat:$supportVersion"
+        cardViewDep = "androidx.cardview:cardview:$cardViewVersion"
+        recyclerViewDep = "androidx.recyclerview:recyclerview:$supportVersion"
+        constraintDep = "androidx.constraintlayout:constraintlayout:$constraintVersion"
+        materialDep = "com.google.android.material:material:1.3.0"
+
+        lifecycleDep = "androidx.lifecycle:lifecycle-extensions:$architectureComponentVersion"
+        lifecycleKapt = "androidx.lifecycle:lifecycle-compiler:$architectureComponentVersion"
+        coroutinesCoreDep = 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3'
+
+        navigationFragmentDep = "androidx.navigation:navigation-fragment-ktx:$navControllerVersion"
+        navigationUiDep = "androidx.navigation:navigation-ui-ktx:$navControllerVersion"
+
+        retrofitDep = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+        interceptorVersionDep = "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+        gsonConvertedDep = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+        gsonDep = "com.google.code.gson:gson:$gsonVersion"
+
+        daggerDep = "com.google.dagger:dagger:$daggerVersion"
+        daggerKapt = "com.google.dagger:dagger-compiler:$daggerVersion"
+
+        glideDep = "com.github.bumptech.glide:glide:$glideVersion"
+        glideKapt = "com.github.bumptech.glide:compiler:$glideVersion"
+        glideOkHttpDep = "com.squareup.okhttp3:okhttp:4.9.0"
+
+        jUnitDep = "junit:junit:$junitVersion"
+        mockitoDep = "org.mockito:mockito-inline:$mockitoVersion"
+        archCoreTestDep = "androidx.arch.core:core-testing:$architectureComponentVersion"
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.0"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
